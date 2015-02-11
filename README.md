@@ -14,7 +14,7 @@ libraryDependencies ++= Seq(
 
 ## How to use
 
-First. Add annotations to your case class.
+Step 1. Add annotations to your case class.
 
     import javax.validation.constraints.Size
 
@@ -23,13 +23,13 @@ First. Add annotations to your case class.
       name: Option[String]
     )
 
-Second. Create validator by our library.
+Step 2. Create validator by our library.
 
     import com.tsukaby.bean_validation_scala.ScalaValidatorFactory
 
     val validator = ScalaValidatorFactory.validatorFactory.getValidator
 
-Third. Validate a case class object.
+Step 3. Validate a case class object.
 
       val obj = Person(Some("abc"))
       val violations = validator.validate(obj)
@@ -38,3 +38,9 @@ Third. Validate a case class object.
         println("Violations found!")
       }
 
+## License
+
+```
+Copyright 2015 - 2015 tsukaby.com
+MIT License
+```
