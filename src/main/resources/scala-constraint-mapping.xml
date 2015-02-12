@@ -16,6 +16,12 @@
     </validated-by>
   </constraint-definition>
 
+  <constraint-definition annotation="javax.validation.constraints.Digits">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.constraintvalidators.DigitsValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
   <constraint-definition annotation="javax.validation.constraints.Size">
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.constraintvalidators.SizeValidatorForOption</value>
