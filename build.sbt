@@ -1,8 +1,45 @@
+organization := "com.tsukaby"
+
 name := "bean-validation-scala"
 
-version := "1.0"
+version := "0.1.0"
 
 scalaVersion := "2.11.5"
+
+// Maven deploy settings
+publishMavenStyle := true
+
+publishArtifact in Test := false
+
+publishTo <<= version { (v: String) =>
+  val nexus = "https://oss.sonatype.org/"
+  if (v.trim.endsWith("SNAPSHOT"))
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+}
+
+pomIncludeRepository := { _ => false }
+
+pomExtra := <url>https://github.com/bean-validation-scala/bean-validation-scala</url>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>git@github.com:bean-validation-scala/bean-validation-scala.git</url>
+    <connection>scm:git:git@github.com:bean-validation-scala/bean-validation-scala.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>tsukaby</id>
+      <name>Shuya Tsukamoto</name>
+      <url>https://github.com/tsukaby</url>
+    </developer>
+  </developers>
 
 // Add warnings
 scalacOptions ++= Seq(
