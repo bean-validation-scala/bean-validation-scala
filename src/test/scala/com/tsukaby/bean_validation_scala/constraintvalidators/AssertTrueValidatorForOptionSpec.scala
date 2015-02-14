@@ -2,7 +2,7 @@ package com.tsukaby.bean_validation_scala.constraintvalidators
 
 import javax.validation.constraints.AssertTrue
 
-import com.tsukaby.bean_validation_scala.{BaseSpec, ScalaValidatorFactory}
+import com.tsukaby.bean_validation_scala.BaseSpec
 
 import scala.annotation.meta.field
 
@@ -14,14 +14,15 @@ class AssertTrueValidatorForOptionSpec extends BaseSpec {
                                      )
 
 
-  "AssertFalseValidatorForOption" should {
-    "Option[String] bean has violations" in {
-      val validator = ScalaValidatorFactory.validator
+  s"$targetClassName" should {
 
-      val bean = TestBean(Some(false))
-      val violations = validator.validate(bean)
+    val testCases = Seq(
+      (TestBean(Some(false)), 1),
+      (TestBean(Some(true)), 0)
+    )
 
-      violations.size must be equalTo 1
-    }
+    testValidation(testCases)
+
   }
+
 }

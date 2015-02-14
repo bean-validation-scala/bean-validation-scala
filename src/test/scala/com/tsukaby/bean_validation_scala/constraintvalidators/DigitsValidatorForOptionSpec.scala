@@ -2,7 +2,7 @@ package com.tsukaby.bean_validation_scala.constraintvalidators
 
 import javax.validation.constraints.Digits
 
-import com.tsukaby.bean_validation_scala.{BaseSpec, ScalaValidatorFactory}
+import com.tsukaby.bean_validation_scala.BaseSpec
 
 import scala.annotation.meta.field
 
@@ -23,31 +23,19 @@ class DigitsValidatorForOptionSpec extends BaseSpec {
                                                      value: Option[Double]
                                                      )
 
+  s"$targetClassName" should {
 
-  "DigitsValidatorForOption" should {
-    "Option[String] bean has violations" in {
-      val validator = ScalaValidatorFactory.validator
 
-      val bean = TestBeanWithOptionString(Some("10.1"))
-      val violations = validator.validate(bean)
+    val testCases = Seq(
+      (TestBeanWithOptionString(Some("10.1")), 1),
+      (TestBeanWithOptionString(Some("1.1")), 0),
+      (TestBeanWithOptionInt(Some(10)), 1),
+      (TestBeanWithOptionInt(Some(1)), 0),
+      (TestBeanWithOptionDouble(Some(10.1)), 1),
+      (TestBeanWithOptionDouble(Some(1.1)), 0)
+    )
 
-      violations.size must be equalTo 1
-    }
-    "Option[Int] bean has violations" in {
-      val validator = ScalaValidatorFactory.validator
+    testValidation(testCases)
 
-      val bean = TestBeanWithOptionInt(Some(10))
-      val violations = validator.validate(bean)
-
-      violations.size must be equalTo 1
-    }
-    "Option[Double] bean has violations" in {
-      val validator = ScalaValidatorFactory.validator
-
-      val bean = TestBeanWithOptionDouble(Some(10.1))
-      val violations = validator.validate(bean)
-
-      violations.size must be equalTo 1
-    }
   }
 }

@@ -2,7 +2,7 @@ package com.tsukaby.bean_validation_scala.constraintvalidators
 
 import javax.validation.constraints.Size
 
-import com.tsukaby.bean_validation_scala.{BaseSpec, ScalaValidatorFactory}
+import com.tsukaby.bean_validation_scala.BaseSpec
 
 import scala.annotation.meta.field
 
@@ -20,36 +20,28 @@ class SizeValidatorForSeqLikeSpec extends BaseSpec {
                                              )
 
   private[this] case class TestBeanWithVector(
-                                             @(Size@field)(min = 1)
-                                             name: Vector[String]
-                                             )
+                                               @(Size@field)(min = 1)
+                                               name: Vector[String]
+                                               )
 
-  "SizeValidatorForOption" should {
-    "Seq[String] bean has violations" in {
-      val validator = ScalaValidatorFactory.validator
+  private[this] case class TestBeanWithArray(
+                                              @(Size@field)(min = 1)
+                                              name: Array[String]
+                                              )
 
-      val bean = TestBeanWithSeq(Seq())
-      val violations = validator.validate(bean)
+  s"$targetClassName" should {
 
-      violations.size must be equalTo 1
-    }
+    val testCases = Seq(
+      (TestBeanWithSeq(Seq()), 1),
+      (TestBeanWithSeq(Seq("1")), 0),
+      (TestBeanWithList(List()), 1),
+      (TestBeanWithList(List("1")), 0),
+      (TestBeanWithVector(Vector()), 1),
+      (TestBeanWithVector(Vector("1")), 0),
+      (TestBeanWithArray(Array()), 1),
+      (TestBeanWithArray(Array("1")), 0)
+    )
 
-    "List[String] bean has violations" in {
-      val validator = ScalaValidatorFactory.validator
-
-      val bean = TestBeanWithList(List())
-      val violations = validator.validate(bean)
-
-      violations.size must be equalTo 1
-    }
-
-    "Vector[String] bean has violations" in {
-      val validator = ScalaValidatorFactory.validator
-
-      val bean = TestBeanWithVector(Vector())
-      val violations = validator.validate(bean)
-
-      violations.size must be equalTo 1
-    }
+    testValidation(testCases)
   }
 }

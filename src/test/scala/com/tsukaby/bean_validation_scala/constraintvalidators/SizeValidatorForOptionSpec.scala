@@ -2,7 +2,7 @@ package com.tsukaby.bean_validation_scala.constraintvalidators
 
 import javax.validation.constraints.Size
 
-import com.tsukaby.bean_validation_scala.{BaseSpec, ScalaValidatorFactory}
+import com.tsukaby.bean_validation_scala.BaseSpec
 
 import scala.annotation.meta.field
 
@@ -20,38 +20,22 @@ class SizeValidatorForOptionSpec extends BaseSpec {
                                                     )
 
   private[this] case class TestBeanWithOptionSeq(
-                                                    @(Size@field)(min = 1)
-                                                    name: Option[Seq[String]]
-                                                    )
+                                                  @(Size@field)(min = 1)
+                                                  name: Option[Seq[String]]
+                                                  )
+
+  s"$targetClassName" should {
 
 
+    val testCases = Seq(
+      (TestBeanWithOptionString(Some("")), 1),
+      (TestBeanWithOptionString(Some("1")), 0),
+      (TestBeanWithOptionArray(Some(Array())), 1),
+      (TestBeanWithOptionArray(Some(Array("1"))), 0),
+      (TestBeanWithOptionSeq(Some(Seq())), 1),
+      (TestBeanWithOptionSeq(Some(Seq("1"))), 0)
+    )
 
-  "SizeValidatorForOption" should {
-    "Option[String] bean has violations" in {
-      val validator = ScalaValidatorFactory.validator
-
-      val bean = TestBeanWithOptionString(Some(""))
-      val violations = validator.validate(bean)
-
-      violations.size must be equalTo 1
-    }
-
-    "Option[Array[String]] bean has violations" in {
-      val validator = ScalaValidatorFactory.validator
-
-      val bean = TestBeanWithOptionArray(Some(Array()))
-      val violations = validator.validate(bean)
-
-      violations.size must be equalTo 1
-    }
-
-    "Option[Seq[String]] bean has violations" in {
-      val validator = ScalaValidatorFactory.validator
-
-      val bean = TestBeanWithOptionSeq(Some(Seq()))
-      val violations = validator.validate(bean)
-
-      violations.size must be equalTo 1
-    }
+    testValidation(testCases)
   }
 }
