@@ -4,6 +4,7 @@
     xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/mapping validation-mapping-1.0.xsd"
     xmlns="http://jboss.org/xml/ns/javax/validation/mapping">
 
+  <!-- javax.validation annotations -->
   <constraint-definition annotation="javax.validation.constraints.AssertFalse">
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.AssertFalseValidatorForOption</value>
@@ -82,6 +83,31 @@
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.SizeValidatorForOption</value>
       <value>com.tsukaby.bean_validation_scala.SizeValidatorForSeqLike</value>
+    </validated-by>
+  </constraint-definition>
+
+  <!-- hibernate annotations -->
+  <constraint-definition annotation="org.hibernate.validator.constraints.EAN">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.EANValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
+  <constraint-definition annotation="org.hibernate.validator.constraints.Email">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.EmailValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
+  <constraint-definition annotation="org.hibernate.validator.constraints.Mod10Check">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.Mod10CheckValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
+  <constraint-definition annotation="org.hibernate.validator.constraints.Mod11Check">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.Mod11CheckValidatorForOption</value>
     </validated-by>
   </constraint-definition>
 
