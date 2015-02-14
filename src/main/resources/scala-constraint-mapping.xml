@@ -135,4 +135,10 @@
     </validated-by>
   </constraint-definition>
 
+  <constraint-definition annotation="org.hibernate.validator.constraints.URL">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.URLValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
 </constraint-mappings>
