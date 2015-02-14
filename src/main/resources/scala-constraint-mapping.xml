@@ -123,4 +123,10 @@
     </validated-by>
   </constraint-definition>
 
+  <constraint-definition annotation="org.hibernate.validator.constraints.NotBlank">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.NotBlankValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
 </constraint-mappings>
