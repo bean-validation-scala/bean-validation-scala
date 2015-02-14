@@ -28,8 +28,7 @@ class SizeValidatorForSeqLikeSpec extends BaseSpec {
                                               )
 
   s"$targetClassName" should {
-
-    val testCases = Seq(
+    Seq(
       (TestBeanWithSeq(Seq()), 1),
       (TestBeanWithSeq(Seq("1")), 0),
       (TestBeanWithList(List()), 1),
@@ -38,8 +37,10 @@ class SizeValidatorForSeqLikeSpec extends BaseSpec {
       (TestBeanWithVector(Vector("1")), 0),
       (TestBeanWithArray(Array()), 1),
       (TestBeanWithArray(Array("1")), 0)
-    )
-
-    testValidation(testCases)
+    ) foreach { case (bean, expected) =>
+      s"Check violations count. bean = $bean, count = $expected" in {
+        test(bean, expected)
+      }
+    }
   }
 }

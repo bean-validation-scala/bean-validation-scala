@@ -11,16 +11,6 @@ trait BaseSpec extends Specification with Mockito {
     this.getClass.getSimpleName.replaceAll("Spec$", "")
   }
 
-  def testValidation(testCases: Seq[(Any, Int)]) = {
-    testCases foreach { case (bean, expected) =>
-      s"Check violations count. bean = $bean, count = $expected" in {
-        val validator = ScalaValidatorFactory.validator
-        val violations = validator.validate(bean)
-        violations.size must be equalTo expected
-      }
-    }
-  }
-
   def test(bean:Any, expected:Int) = {
     val validator = ScalaValidatorFactory.validator
     val violations = validator.validate(bean)

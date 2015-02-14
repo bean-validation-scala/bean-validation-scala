@@ -13,14 +13,14 @@ class AssertTrueValidatorForOptionSpec extends BaseSpec {
 
 
   s"$targetClassName" should {
-
-    val testCases = Seq(
+    Seq(
       (TestBean(Some(false)), 1),
       (TestBean(Some(true)), 0)
-    )
-
-    testValidation(testCases)
-
+    ) foreach { case (bean, expected) =>
+      s"Check violations count. bean = $bean, count = $expected" in {
+        test(bean, expected)
+      }
+    }
   }
 
 }

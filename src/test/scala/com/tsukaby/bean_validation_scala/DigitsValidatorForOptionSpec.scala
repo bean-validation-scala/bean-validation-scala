@@ -22,18 +22,17 @@ class DigitsValidatorForOptionSpec extends BaseSpec {
                                                      )
 
   s"$targetClassName" should {
-
-
-    val testCases = Seq(
+    Seq(
       (TestBeanWithOptionString(Some("10.1")), 1),
       (TestBeanWithOptionString(Some("1.1")), 0),
       (TestBeanWithOptionInt(Some(10)), 1),
       (TestBeanWithOptionInt(Some(1)), 0),
       (TestBeanWithOptionDouble(Some(10.1)), 1),
       (TestBeanWithOptionDouble(Some(1.1)), 0)
-    )
-
-    testValidation(testCases)
-
+    ) foreach { case (bean, expected) =>
+      s"Check violations count. bean = $bean, count = $expected" in {
+        test(bean, expected)
+      }
+    }
   }
 }
