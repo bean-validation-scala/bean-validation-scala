@@ -21,4 +21,11 @@ trait BaseSpec extends Specification with Mockito {
     }
   }
 
+  def test(bean:Any, expected:Int) = {
+    val validator = ScalaValidatorFactory.validator
+    val violations = validator.validate(bean)
+    violations.size must be equalTo expected
+
+  }
+
 }

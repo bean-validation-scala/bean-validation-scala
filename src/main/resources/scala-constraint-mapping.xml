@@ -16,6 +16,18 @@
     </validated-by>
   </constraint-definition>
 
+  <constraint-definition annotation="javax.validation.constraints.DecimalMax">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.DecimalMaxValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
+  <constraint-definition annotation="javax.validation.constraints.DecimalMin">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.DecimalMinValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
   <constraint-definition annotation="javax.validation.constraints.Digits">
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.DigitsValidatorForOption</value>
