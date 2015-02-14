@@ -19,6 +19,12 @@ class SizeValidatorForOptionSpec extends BaseSpec {
                                                     name: Option[Array[String]]
                                                     )
 
+  private[this] case class TestBeanWithOptionSeq(
+                                                    @(Size@field)(min = 1)
+                                                    name: Option[Seq[String]]
+                                                    )
+
+
 
   "SizeValidatorForOption" should {
     "Option[String] bean has violations" in {
@@ -34,6 +40,15 @@ class SizeValidatorForOptionSpec extends BaseSpec {
       val validator = ScalaValidatorFactory.validator
 
       val bean = TestBeanWithOptionArray(Some(Array()))
+      val violations = validator.validate(bean)
+
+      violations.size must be equalTo 1
+    }
+
+    "Option[Seq[String]] bean has violations" in {
+      val validator = ScalaValidatorFactory.validator
+
+      val bean = TestBeanWithOptionSeq(Some(Seq()))
       val violations = validator.validate(bean)
 
       violations.size must be equalTo 1

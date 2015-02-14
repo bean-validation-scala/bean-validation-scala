@@ -7,6 +7,7 @@ import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 import org.hibernate.validator.internal.constraintvalidators._
 
 import scala.collection.JavaConversions._
+import scala.collection.SeqLike
 
 /**
  * Check that the length of a wrapped value is between min and max.
@@ -53,12 +54,6 @@ class SizeValidatorForOption extends ConstraintValidator[Size, Option[_]] {
         val v = new SizeValidatorForArraysOfLong
         v.initialize(size)
         v.isValid(x, context)
-        /*
-      case Some(x:Array[]) =>
-        val v = new SizeValidatorForArraysOfPrimitives
-        v.initialize(size)
-        v.isValid(x, context)
-        */
       case Some(x:Array[Short]) =>
         val v = new SizeValidatorForArraysOfShort
         v.initialize(size)
@@ -71,6 +66,10 @@ class SizeValidatorForOption extends ConstraintValidator[Size, Option[_]] {
         val v = new SizeValidatorForCollection
         v.initialize(size)
         v.isValid(x, context)
+      case Some(x:SeqLike[_, _]) =>
+        val v = new SizeValidatorForCollection
+        v.initialize(size)
+        v.isValid(x.toSeq, context)
       case Some(x:Map[_, _]) =>
         val v = new SizeValidatorForMap
         v.initialize(size)
