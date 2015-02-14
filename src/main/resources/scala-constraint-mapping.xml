@@ -99,6 +99,12 @@
     </validated-by>
   </constraint-definition>
 
+  <constraint-definition annotation="org.hibernate.validator.constraints.Length">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.LengthValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
   <constraint-definition annotation="org.hibernate.validator.constraints.Mod10Check">
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.Mod10CheckValidatorForOption</value>
