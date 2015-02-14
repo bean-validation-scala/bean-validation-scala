@@ -12,15 +12,15 @@ import scala.collection.SeqLike
  * Check that the length of a wrapped value is between min and max.
  */
 class SizeValidatorForSeqLike extends ConstraintValidator[Size, SeqLike[_, _]] {
-  private var size: Size = null
+  private var constraintAnnotation: Size = null
 
   override def initialize(constraintAnnotation: Size): Unit = {
-    size = constraintAnnotation
+    this.constraintAnnotation = constraintAnnotation
   }
 
   override def isValid(value: SeqLike[_, _], context: ConstraintValidatorContext): Boolean = {
     val v = new SizeValidatorForCollection
-    v.initialize(size)
+    v.initialize(constraintAnnotation)
     v.isValid(value.toSeq, context)
   }
 }
