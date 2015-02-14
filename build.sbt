@@ -16,10 +16,10 @@ publishTo <<= version { (v: String) =>
   if (v.trim.endsWith("SNAPSHOT"))
     Some("snapshots" at nexus + "content/repositories/snapshots")
   else
-    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+    Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
 
-pomIncludeRepository := { _ => false }
+pomIncludeRepository := { _ => false}
 
 pomExtra := <url>https://github.com/bean-validation-scala/bean-validation-scala</url>
   <licenses>
@@ -60,6 +60,8 @@ libraryDependencies ++= Seq(
   "org.hibernate" % "hibernate-validator" % "5.1.3.Final", // Bean validation
   "javax.validation" % "validation-api" % "1.1.0.Final", // Bean validation
   "org.glassfish" % "javax.el" % "3.0.0", // Bean validation
+  "org.joda" % "joda-convert" % "1.7", // scalac compile helper for joda-time.
+  "joda-time" % "joda-time" % "2.7" % "optional",
   "org.specs2" %% "specs2-core" % "2.4.16" % "test",
   "org.specs2" %% "specs2-mock" % "2.4.16" % "test"
 )

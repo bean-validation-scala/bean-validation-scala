@@ -34,6 +34,18 @@
     </validated-by>
   </constraint-definition>
 
+  <constraint-definition annotation="javax.validation.constraints.Future">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.FutureValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
+  <constraint-definition annotation="javax.validation.constraints.Past">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.PastValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
   <constraint-definition annotation="javax.validation.constraints.Size">
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.SizeValidatorForOption</value>
