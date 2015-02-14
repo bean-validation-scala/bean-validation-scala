@@ -40,6 +40,18 @@
     </validated-by>
   </constraint-definition>
 
+  <constraint-definition annotation="javax.validation.constraints.Max">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.MaxValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
+  <constraint-definition annotation="javax.validation.constraints.Min">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.MinValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
   <constraint-definition annotation="javax.validation.constraints.Past">
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.PastValidatorForOption</value>
