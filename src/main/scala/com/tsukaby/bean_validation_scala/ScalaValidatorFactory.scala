@@ -14,11 +14,9 @@ object ScalaValidatorFactory {
    * Provide a ValidatorFactory with scala extensions.
    */
   lazy val validatorFactory = {
-    val url = Thread.currentThread().getContextClassLoader.getResource("scala-constraint-mapping.xml")
-    val file = new File(url.getPath)
-    val fis = new FileInputStream(file)
+    val stream = getClass.getClassLoader.getResourceAsStream("scala-constraint-mapping.xml")
 
-    val validatorFactory = Validation.byDefaultProvider().configure().addMapping(fis).asInstanceOf[ConfigurationImpl].buildValidatorFactory()
+    val validatorFactory = Validation.byDefaultProvider().configure().addMapping(stream).asInstanceOf[ConfigurationImpl].buildValidatorFactory()
 
     validatorFactory
   }
