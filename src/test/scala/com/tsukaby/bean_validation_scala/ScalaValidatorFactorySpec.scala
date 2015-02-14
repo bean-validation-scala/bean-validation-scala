@@ -7,5 +7,11 @@ class ScalaValidatorFactorySpec extends BaseSpec {
 
       validatorFactory must not beNull
     }
+
+    "Get a instance of Validator" in {
+      val validator = ScalaValidatorFactory.validator
+
+      validator must not beNull
+    }
   }
 }

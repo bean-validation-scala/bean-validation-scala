@@ -26,7 +26,7 @@ class DigitsValidatorForOptionSpec extends BaseSpec {
 
   "DigitsValidatorForOption" should {
     "Option[String] bean has violations" in {
-      val validator = ScalaValidatorFactory.validatorFactory.getValidator
+      val validator = ScalaValidatorFactory.validator
 
       val bean = TestBeanWithOptionString(Some("10.1"))
       val violations = validator.validate(bean)
@@ -34,7 +34,7 @@ class DigitsValidatorForOptionSpec extends BaseSpec {
       violations.size must be equalTo 1
     }
     "Option[Int] bean has violations" in {
-      val validator = ScalaValidatorFactory.validatorFactory.getValidator
+      val validator = ScalaValidatorFactory.validator
 
       val bean = TestBeanWithOptionInt(Some(10))
       val violations = validator.validate(bean)
@@ -42,7 +42,7 @@ class DigitsValidatorForOptionSpec extends BaseSpec {
       violations.size must be equalTo 1
     }
     "Option[Double] bean has violations" in {
-      val validator = ScalaValidatorFactory.validatorFactory.getValidator
+      val validator = ScalaValidatorFactory.validator
 
       val bean = TestBeanWithOptionDouble(Some(10.1))
       val violations = validator.validate(bean)

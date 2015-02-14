@@ -16,7 +16,7 @@ class AssertFalseValidatorForOptionSpec extends BaseSpec {
 
   "AssertFalseValidatorForOption" should {
     "Option[Boolean] bean has violations" in {
-      val validator = ScalaValidatorFactory.validatorFactory.getValidator
+      val validator = ScalaValidatorFactory.validator
 
       val bean = TestBean(Some(true))
       val violations = validator.validate(bean)
