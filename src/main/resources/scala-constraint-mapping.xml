@@ -52,9 +52,29 @@
     </validated-by>
   </constraint-definition>
 
+  <!--
+  <constraint-definition annotation="javax.validation.constraints.NotNull">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.NotNullValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
+  <constraint-definition annotation="javax.validation.constraints.Null">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.NullValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+  -->
+
   <constraint-definition annotation="javax.validation.constraints.Past">
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.PastValidatorForOption</value>
+    </validated-by>
+  </constraint-definition>
+
+  <constraint-definition annotation="javax.validation.constraints.Pattern">
+    <validated-by include-existing-validators="true">
+      <value>com.tsukaby.bean_validation_scala.PatternValidatorForOption</value>
     </validated-by>
   </constraint-definition>
 
