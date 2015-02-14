@@ -62,6 +62,7 @@ libraryDependencies ++= Seq(
   "org.glassfish" % "javax.el" % "3.0.0", // Bean validation
   "org.joda" % "joda-convert" % "1.7", // scalac compile helper for joda-time.
   "joda-time" % "joda-time" % "2.7" % "optional",
+  "org.jsoup" % "jsoup" % "1.8.1" % "optional",
   "org.specs2" %% "specs2-core" % "2.4.16" % "test",
   "org.specs2" %% "specs2-mock" % "2.4.16" % "test"
 )
