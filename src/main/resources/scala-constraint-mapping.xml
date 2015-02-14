@@ -87,6 +87,9 @@
   </constraint-definition>
 
   <!-- hibernate annotations -->
+
+  <!-- CreditCardNumber is combined annotation. -->
+
   <constraint-definition annotation="org.hibernate.validator.constraints.EAN">
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.EANValidatorForOption</value>
@@ -129,16 +132,25 @@
     </validated-by>
   </constraint-definition>
 
+  <!-- NotEmpty is combined annotation. -->
+
+  <!-- ParameterScriptAssert -->
+
+  <!-- Range is combined annotation. -->
+
   <constraint-definition annotation="org.hibernate.validator.constraints.SafeHtml">
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.SafeHtmlValidatorForOption</value>
     </validated-by>
   </constraint-definition>
 
+  <!-- ScriptAssert -->
+
   <constraint-definition annotation="org.hibernate.validator.constraints.URL">
     <validated-by include-existing-validators="true">
       <value>com.tsukaby.bean_validation_scala.URLValidatorForOption</value>
     </validated-by>
   </constraint-definition>
+
 
 </constraint-mappings>
