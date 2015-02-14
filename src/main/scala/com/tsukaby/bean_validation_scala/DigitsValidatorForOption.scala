@@ -1,4 +1,4 @@
-package com.tsukaby.bean_validation_scala.constraintvalidators
+package com.tsukaby.bean_validation_scala
 
 import javax.validation.constraints.Digits
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}

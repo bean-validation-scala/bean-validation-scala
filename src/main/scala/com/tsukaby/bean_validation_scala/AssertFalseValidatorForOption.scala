@@ -1,17 +1,17 @@
-package com.tsukaby.bean_validation_scala.constraintvalidators
+package com.tsukaby.bean_validation_scala
 
-import javax.validation.constraints.AssertTrue
+import javax.validation.constraints.AssertFalse
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
 import org.hibernate.validator.internal.constraintvalidators._
 
 /**
- * Validates that the wrapped value passed is true
+ * Validates that the wrapped value passed is false
  */
-class AssertTrueValidatorForOption extends ConstraintValidator[AssertTrue, Option[Boolean]] {
-  private var constraintAnnotation: AssertTrue = null
+class AssertFalseValidatorForOption extends ConstraintValidator[AssertFalse, Option[Boolean]] {
+  private var constraintAnnotation: AssertFalse = null
 
-  override def initialize(constraintAnnotation: AssertTrue): Unit = {
+  override def initialize(constraintAnnotation: AssertFalse): Unit = {
     this.constraintAnnotation = constraintAnnotation
   }
 
@@ -19,7 +19,7 @@ class AssertTrueValidatorForOption extends ConstraintValidator[AssertTrue, Optio
 
     value match {
       case Some(x) =>
-        val v = new AssertTrueValidator
+        val v = new AssertFalseValidator
         v.initialize(constraintAnnotation)
         v.isValid(x, context)
       case None =>

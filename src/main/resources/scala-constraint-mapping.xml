@@ -6,26 +6,26 @@
 
   <constraint-definition annotation="javax.validation.constraints.AssertFalse">
     <validated-by include-existing-validators="true">
-      <value>com.tsukaby.bean_validation_scala.constraintvalidators.AssertFalseValidatorForOption</value>
+      <value>com.tsukaby.bean_validation_scala.AssertFalseValidatorForOption</value>
     </validated-by>
   </constraint-definition>
 
   <constraint-definition annotation="javax.validation.constraints.AssertTrue">
     <validated-by include-existing-validators="true">
-      <value>com.tsukaby.bean_validation_scala.constraintvalidators.AssertTrueValidatorForOption</value>
+      <value>com.tsukaby.bean_validation_scala.AssertTrueValidatorForOption</value>
     </validated-by>
   </constraint-definition>
 
   <constraint-definition annotation="javax.validation.constraints.Digits">
     <validated-by include-existing-validators="true">
-      <value>com.tsukaby.bean_validation_scala.constraintvalidators.DigitsValidatorForOption</value>
+      <value>com.tsukaby.bean_validation_scala.DigitsValidatorForOption</value>
     </validated-by>
   </constraint-definition>
 
   <constraint-definition annotation="javax.validation.constraints.Size">
     <validated-by include-existing-validators="true">
-      <value>com.tsukaby.bean_validation_scala.constraintvalidators.SizeValidatorForOption</value>
-      <value>com.tsukaby.bean_validation_scala.constraintvalidators.SizeValidatorForSeqLike</value>
+      <value>com.tsukaby.bean_validation_scala.SizeValidatorForOption</value>
+      <value>com.tsukaby.bean_validation_scala.SizeValidatorForSeqLike</value>
     </validated-by>
   </constraint-definition>
 

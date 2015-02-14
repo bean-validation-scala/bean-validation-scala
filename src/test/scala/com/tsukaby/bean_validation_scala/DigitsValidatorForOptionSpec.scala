@@ -1,8 +1,6 @@
-package com.tsukaby.bean_validation_scala.constraintvalidators
+package com.tsukaby.bean_validation_scala
 
 import javax.validation.constraints.Digits
-
-import com.tsukaby.bean_validation_scala.BaseSpec
 
 import scala.annotation.meta.field
 

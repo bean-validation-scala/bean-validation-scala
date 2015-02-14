@@ -1,6 +1,5 @@
-package com.tsukaby.bean_validation_scala.constraintvalidators
+package com.tsukaby.bean_validation_scala
 
-import java.util
 import javax.validation.constraints.Size
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
