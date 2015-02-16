@@ -71,6 +71,13 @@ Step 3. Validate a case class object.
 - SafeHtml
 - URL
 
+`com.tsukaby.bean_validation_scala`
+
+Original annotations.
+
+- AssertNone
+- AssertSome
+
 ### Doesn't support annotations.
 
 - NotNull `// What do you think I should do?`

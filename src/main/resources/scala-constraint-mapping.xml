@@ -152,5 +152,17 @@
     </validated-by>
   </constraint-definition>
 
+  <!-- Original annotations -->
+  <constraint-definition annotation="com.tsukaby.bean_validation_scala.AssertNone">
+    <validated-by>
+      <value>com.tsukaby.bean_validation_scala.AssertNoneValidator</value>
+    </validated-by>
+  </constraint-definition>
+
+  <constraint-definition annotation="com.tsukaby.bean_validation_scala.AssertSome">
+    <validated-by>
+      <value>com.tsukaby.bean_validation_scala.AssertSomeValidator</value>
+    </validated-by>
+  </constraint-definition>
 
 </constraint-mappings>
