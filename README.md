@@ -77,6 +77,7 @@ Original annotations.
 
 - AssertNone
 - AssertSome
+- ByteSize
 
 ### Doesn't support annotations.
 
