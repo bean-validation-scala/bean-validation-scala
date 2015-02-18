@@ -2,7 +2,9 @@
 JSR 303 and 349 Bean Validation for Scala.
 This library enable validation to some Monad. (e.g. Option, Seq, etc)
 
-master  : [![Build Status](https://travis-ci.org/bean-validation-scala/bean-validation-scala.svg?branch=master)](https://travis-ci.org/bean-validation-scala/bean-validation-scala)
+[![Build Status](https://travis-ci.org/bean-validation-scala/bean-validation-scala.svg?branch=master)](https://travis-ci.org/bean-validation-scala/bean-validation-scala)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.tsukaby/bean-validation-scala_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.tsukaby/bean-validation-scala_2.11)
+[![Scaladoc](http://javadoc-badge.appspot.com/com.tsukaby/bean-validation-scala_2.11.svg?label=scaladoc)](http://javadoc-badge.appspot.com/com.tsukaby/bean-validation-scala_2.11)
 
 ## Getting Started
 
