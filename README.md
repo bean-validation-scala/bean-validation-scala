@@ -9,7 +9,7 @@ This library enable validation to some Monad. (e.g. Option, Seq, etc)
 ## Getting Started
 
     libraryDependencies ++= Seq(
-      "com.tsukaby" %% "bean-validation-scala" % "0.2.0"
+      "com.tsukaby" %% "bean-validation-scala" % "0.3.0"
     )
 
 This library has been published in the [Maven central](http://search.maven.org/#browse|999013097).
