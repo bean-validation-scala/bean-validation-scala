@@ -1,4 +1,6 @@
 # bean-validation-scala
+
+[![Join the chat at https://gitter.im/bean-validation-scala/bean-validation-scala](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bean-validation-scala/bean-validation-scala?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 JSR 303 and 349 Bean Validation for Scala.
 This library enable validation to some Monad. (e.g. Option, Seq, etc)
 
