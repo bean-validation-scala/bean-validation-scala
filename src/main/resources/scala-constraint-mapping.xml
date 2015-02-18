@@ -165,4 +165,10 @@
     </validated-by>
   </constraint-definition>
 
+  <constraint-definition annotation="com.tsukaby.bean_validation_scala.ByteSize">
+    <validated-by>
+      <value>com.tsukaby.bean_validation_scala.ByteSizeValidator</value>
+    </validated-by>
+  </constraint-definition>
+
 </constraint-mappings>
