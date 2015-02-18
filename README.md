@@ -1,12 +1,15 @@
 # bean-validation-scala
 
-[![Join the chat at https://gitter.im/bean-validation-scala/bean-validation-scala](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bean-validation-scala/bean-validation-scala?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 JSR 303 and 349 Bean Validation for Scala.
 This library enable validation to some Monad. (e.g. Option, Seq, etc)
 
 [![Build Status](https://travis-ci.org/bean-validation-scala/bean-validation-scala.svg?branch=master)](https://travis-ci.org/bean-validation-scala/bean-validation-scala)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.tsukaby/bean-validation-scala_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.tsukaby/bean-validation-scala_2.11)
 [![Scaladoc](http://javadoc-badge.appspot.com/com.tsukaby/bean-validation-scala_2.11.svg?label=scaladoc)](http://javadoc-badge.appspot.com/com.tsukaby/bean-validation-scala_2.11)
+
+## Gitter Chat for Casual Q&A
+
+- 英語 or 日本語 (English or Japanese): [![Join the chat at https://gitter.im/bean-validation-scala/bean-validation-scala](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bean-validation-scala/bean-validation-scala?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Getting Started
 
