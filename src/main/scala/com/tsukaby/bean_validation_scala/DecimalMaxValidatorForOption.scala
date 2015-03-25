@@ -27,7 +27,9 @@ class DecimalMaxValidatorForOption extends ConstraintValidator[DecimalMax, Optio
         val v = new DecimalMaxValidatorForNumber
         v.initialize(constraintAnnotation)
         v.isValid(x, context)
-      case Some(_) | None =>
+      case None =>
+        true
+      case Some(_) =>
         throw new IllegalStateException("oops.")
     }
   }

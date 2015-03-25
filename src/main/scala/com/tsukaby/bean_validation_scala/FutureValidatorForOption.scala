@@ -36,7 +36,9 @@ class FutureValidatorForOption extends ConstraintValidator[Future, Option[_]] {
         val v = new FutureValidatorForReadablePartial
         v.initialize(constraintAnnotation)
         v.isValid(x, context)
-      case Some(_) | None =>
+      case None =>
+        true
+      case Some(_) =>
         throw new IllegalStateException("oops.")
     }
   }

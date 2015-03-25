@@ -22,7 +22,9 @@ class NotBlankValidatorForOption extends ConstraintValidator[NotBlank, Option[_]
         val v = new NotBlankValidator
         v.initialize(constraintAnnotation)
         v.isValid(x, context)
-      case Some(_) | None =>
+      case None =>
+        true
+      case Some(_) =>
         throw new IllegalStateException("oops.")
     }
   }

@@ -27,7 +27,9 @@ class DigitsValidatorForOption extends ConstraintValidator[Digits, Option[_]] {
         val v = new DigitsValidatorForNumber
         v.initialize(constraintAnnotation)
         v.isValid(x, context)
-      case Some(_) | None =>
+      case None =>
+        true
+      case Some(_) =>
         throw new IllegalStateException("oops.")
     }
   }

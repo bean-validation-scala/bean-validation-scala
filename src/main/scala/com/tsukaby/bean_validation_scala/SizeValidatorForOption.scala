@@ -74,7 +74,9 @@ class SizeValidatorForOption extends ConstraintValidator[Size, Option[_]] {
         val v = new SizeValidatorForMap
         v.initialize(constraintAnnotation)
         v.isValid(x, context)
-      case Some(_) | None =>
+      case None =>
+        true
+      case Some(_) =>
         throw new IllegalStateException("oops.")
     }
   }

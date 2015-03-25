@@ -24,7 +24,9 @@ class Mod11CheckValidatorForOption extends ConstraintValidator[Mod11Check, Optio
         val v = new Mod11CheckValidator
         v.initialize(constraintAnnotation)
         v.isValid(x, context)
-      case Some(_) | None =>
+      case None =>
+        true
+      case Some(_) =>
         throw new IllegalStateException("oops.")
     }
   }

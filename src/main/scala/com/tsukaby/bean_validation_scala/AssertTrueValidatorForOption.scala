@@ -23,7 +23,7 @@ class AssertTrueValidatorForOption extends ConstraintValidator[AssertTrue, Optio
         v.initialize(constraintAnnotation)
         v.isValid(x, context)
       case None =>
-        throw new IllegalStateException("oops.")
+        true
     }
   }
 }

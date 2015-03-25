@@ -22,7 +22,9 @@ class LengthValidatorForOption extends ConstraintValidator[Length, Option[_]] {
         val v = new LengthValidator
         v.initialize(constraintAnnotation)
         v.isValid(x, context)
-      case Some(_) | None =>
+      case None =>
+        true
+      case Some(_) =>
         throw new IllegalStateException("oops.")
     }
   }

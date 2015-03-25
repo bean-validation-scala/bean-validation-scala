@@ -27,7 +27,9 @@ class DecimalMinValidatorForOption extends ConstraintValidator[DecimalMin, Optio
         val v = new DecimalMinValidatorForNumber
         v.initialize(constraintAnnotation)
         v.isValid(x, context)
-      case Some(_) | None =>
+      case None =>
+        true
+      case Some(_) =>
         throw new IllegalStateException("oops.")
     }
   }
