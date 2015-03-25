@@ -11,15 +11,12 @@ class AssertFalseValidatorForOptionSpec extends BaseSpec {
                                      hasSomething: Option[Boolean]
                                      )
 
-
-  s"$targetClassName" should {
-    Seq(
-      (TestBean(Some(true)), 1),
-      (TestBean(Some(false)), 0)
-    ) foreach { case (bean, expected) =>
-      s"Check violations count. bean = $bean, count = $expected" in {
-        test(bean, expected)
-      }
+  Seq(
+    (TestBean(Some(true)), 1),
+    (TestBean(Some(false)), 0)
+  ) foreach { case (bean, expected) =>
+    s"Check violations count. bean = $bean, count = $expected" >> {
+      test(bean, expected)
     }
   }
 }

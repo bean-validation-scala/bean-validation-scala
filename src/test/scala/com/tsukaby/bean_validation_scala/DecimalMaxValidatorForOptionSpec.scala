@@ -21,18 +21,16 @@ class DecimalMaxValidatorForOptionSpec extends BaseSpec {
                                                      value: Option[Double]
                                                      )
 
-  s"$targetClassName" should {
-    Seq(
-      (TestBeanWithOptionString(Some("10.1")), 1),
-      (TestBeanWithOptionString(Some("10.0")), 0),
-      (TestBeanWithOptionInt(Some(11)), 1),
-      (TestBeanWithOptionInt(Some(10)), 0),
-      (TestBeanWithOptionDouble(Some(10.1)), 1),
-      (TestBeanWithOptionDouble(Some(10.0)), 0)
-    ) foreach { case (bean, expected) =>
-      s"Check violations count. bean = $bean, count = $expected" in {
-        test(bean, expected)
-      }
+  Seq(
+    (TestBeanWithOptionString(Some("10.1")), 1),
+    (TestBeanWithOptionString(Some("10.0")), 0),
+    (TestBeanWithOptionInt(Some(11)), 1),
+    (TestBeanWithOptionInt(Some(10)), 0),
+    (TestBeanWithOptionDouble(Some(10.1)), 1),
+    (TestBeanWithOptionDouble(Some(10.0)), 0)
+  ) foreach { case (bean, expected) =>
+    s"Check violations count. bean = $bean, count = $expected" >> {
+      test(bean, expected)
     }
   }
 }

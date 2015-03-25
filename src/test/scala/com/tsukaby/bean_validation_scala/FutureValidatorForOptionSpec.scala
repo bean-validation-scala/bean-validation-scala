@@ -24,20 +24,18 @@ class FutureValidatorForOptionSpec extends BaseSpec {
                                                        value: Option[DateTime]
                                                        )
 
-  s"$targetClassName" should {
-    val yesterday = DateTime.now().minusDays(1)
-    val tomorrow = DateTime.now().plusDays(1)
-    Seq(
-      (TestBeanWithOptionCalendar(Some(yesterday.toCalendar(Locale.getDefault))), 1),
-      (TestBeanWithOptionCalendar(Some(tomorrow.toCalendar(Locale.getDefault))), 0),
-      (TestBeanWithOptionDate(Some(yesterday.toDate)), 1),
-      (TestBeanWithOptionDate(Some(tomorrow.toDate)), 0),
-      (TestBeanWithOptionDateTime(Some(yesterday)), 1),
-      (TestBeanWithOptionDateTime(Some(tomorrow)), 0)
-    ) foreach { case (bean, expected) =>
-      s"Check violations count. bean = $bean, count = $expected" in {
-        test(bean, expected)
-      }
+  val yesterday = DateTime.now().minusDays(1)
+  val tomorrow = DateTime.now().plusDays(1)
+  Seq(
+    (TestBeanWithOptionCalendar(Some(yesterday.toCalendar(Locale.getDefault))), 1),
+    (TestBeanWithOptionCalendar(Some(tomorrow.toCalendar(Locale.getDefault))), 0),
+    (TestBeanWithOptionDate(Some(yesterday.toDate)), 1),
+    (TestBeanWithOptionDate(Some(tomorrow.toDate)), 0),
+    (TestBeanWithOptionDateTime(Some(yesterday)), 1),
+    (TestBeanWithOptionDateTime(Some(tomorrow)), 0)
+  ) foreach { case (bean, expected) =>
+    s"Check violations count. bean = $bean, count = $expected" >> {
+      test(bean, expected)
     }
   }
 }

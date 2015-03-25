@@ -1,17 +1,17 @@
 package com.tsukaby.bean_validation_scala
 
 class ScalaValidatorFactorySpec extends BaseSpec {
-  "ScalaValidatorFactory#validatorFactory" should {
-    "Get a instance of ValidatorFactory" in {
+  "ScalaValidatorFactory#validatorFactory" >> {
+    "Get a instance of ValidatorFactory" >> {
       val validatorFactory = ScalaValidatorFactory.validatorFactory
 
-      validatorFactory must not beNull
+      validatorFactory must_!= null
     }
 
-    "Get a instance of Validator" in {
+    "Get a instance of Validator" >> {
       val validator = ScalaValidatorFactory.validator
 
-      validator must not beNull
+      validator must_!= null
     }
   }
 }

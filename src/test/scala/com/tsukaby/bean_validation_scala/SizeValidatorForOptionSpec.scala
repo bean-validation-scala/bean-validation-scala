@@ -22,18 +22,16 @@ class SizeValidatorForOptionSpec extends BaseSpec {
                                                   name: Option[Seq[String]]
                                                   )
 
-  s"$targetClassName" should {
-    Seq(
-      (TestBeanWithOptionString(Some("")), 1),
-      (TestBeanWithOptionString(Some("1")), 0),
-      (TestBeanWithOptionArray(Some(Array())), 1),
-      (TestBeanWithOptionArray(Some(Array("1"))), 0),
-      (TestBeanWithOptionSeq(Some(Seq())), 1),
-      (TestBeanWithOptionSeq(Some(Seq("1"))), 0)
-    ) foreach { case (bean, expected) =>
-      s"Check violations count. bean = $bean, count = $expected" in {
-        test(bean, expected)
-      }
+  Seq(
+    (TestBeanWithOptionString(Some("")), 1),
+    (TestBeanWithOptionString(Some("1")), 0),
+    (TestBeanWithOptionArray(Some(Array())), 1),
+    (TestBeanWithOptionArray(Some(Array("1"))), 0),
+    (TestBeanWithOptionSeq(Some(Seq())), 1),
+    (TestBeanWithOptionSeq(Some(Seq("1"))), 0)
+  ) foreach { case (bean, expected) =>
+    s"Check violations count. bean = $bean, count = $expected" >> {
+      test(bean, expected)
     }
   }
 }

@@ -4,7 +4,9 @@ name := "bean-validation-scala"
 
 version := "0.3.0"
 
-scalaVersion := "2.11.5"
+scalaVersion := "2.11.6"
+
+resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
 
 // Maven deploy settings
 publishMavenStyle := true
@@ -52,9 +54,9 @@ scalacOptions ++= Seq(
   "-Ywarn-unused",
   "-Ywarn-unused-import",
   "-Ywarn-value-discard",
-  "-Xfatal-warnings"
+  "-Xfatal-warnings",
+  "-Yrangepos"
 )
-
 
 libraryDependencies ++= Seq(
   "org.hibernate" % "hibernate-validator" % "5.1.3.Final", // Bean validation
@@ -63,6 +65,6 @@ libraryDependencies ++= Seq(
   "org.joda" % "joda-convert" % "1.7", // scalac compile helper for joda-time.
   "joda-time" % "joda-time" % "2.7" % "optional",
   "org.jsoup" % "jsoup" % "1.8.1" % "optional",
-  "org.specs2" %% "specs2-core" % "2.4.16" % "test",
-  "org.specs2" %% "specs2-mock" % "2.4.16" % "test"
+  "org.specs2" %% "specs2-core" % "3.1.1" % "test",
+  "org.specs2" %% "specs2-mock" % "3.1.1" % "test"
 )
