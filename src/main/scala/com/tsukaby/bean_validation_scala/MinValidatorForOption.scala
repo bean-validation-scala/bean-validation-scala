@@ -3,7 +3,7 @@ package com.tsukaby.bean_validation_scala
 import javax.validation.constraints.Min
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.bv.{MinValidatorForNumber, MinValidatorForCharSequence}
 
 /**
  * Check that the wrapped character sequence (e.g. Option[String]) and the number being validated represents a number,

@@ -3,7 +3,7 @@ package com.tsukaby.bean_validation_scala
 import javax.validation.constraints.DecimalMax
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.bv.{DecimalMaxValidatorForNumber, DecimalMaxValidatorForCharSequence}
 
 /**
  * Check that the wrapped character sequence (e.g. Option[String]) and the wrapped number being validated represents

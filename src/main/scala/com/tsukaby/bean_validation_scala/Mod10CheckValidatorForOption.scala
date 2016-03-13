@@ -3,7 +3,7 @@ package com.tsukaby.bean_validation_scala
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
 import org.hibernate.validator.constraints.Mod10Check
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.hv.Mod10CheckValidator
 
 /**
  * Mod10 (Luhn algorithm implementation) Check validator for scala.

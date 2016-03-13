@@ -4,7 +4,7 @@ import java.util.{Calendar, Date}
 import javax.validation.constraints.Past
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.bv.past.{PastValidatorForReadablePartial, PastValidatorForReadableInstant, PastValidatorForDate, PastValidatorForCalendar}
 import org.joda.time.{ReadableInstant, ReadablePartial}
 
 /**

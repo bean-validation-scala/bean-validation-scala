@@ -4,7 +4,7 @@ import java.util
 import javax.validation.constraints.Size
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.bv.size._
 
 import scala.collection.JavaConversions._
 import scala.collection.SeqLike

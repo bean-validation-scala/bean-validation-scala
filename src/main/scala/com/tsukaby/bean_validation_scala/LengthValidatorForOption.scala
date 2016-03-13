@@ -3,7 +3,7 @@ package com.tsukaby.bean_validation_scala
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
 import org.hibernate.validator.constraints.Length
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.hv.LengthValidator
 
 /**
  * Check that the wrapped character sequence length is between min and max.
