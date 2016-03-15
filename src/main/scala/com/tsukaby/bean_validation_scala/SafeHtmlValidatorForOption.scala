@@ -3,7 +3,7 @@ package com.tsukaby.bean_validation_scala
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
 import org.hibernate.validator.constraints.SafeHtml
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.hv.SafeHtmlValidator
 
 /**
  * Check the wrapped string.

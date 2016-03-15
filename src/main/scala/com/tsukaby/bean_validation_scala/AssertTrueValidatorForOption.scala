@@ -3,7 +3,7 @@ package com.tsukaby.bean_validation_scala
 import javax.validation.constraints.AssertTrue
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.bv.AssertTrueValidator
 
 /**
  * Validates that the wrapped value passed is true

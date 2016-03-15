@@ -4,7 +4,7 @@ name := "bean-validation-scala"
 
 version := "0.4.0"
 
-scalaVersion := "2.11.6"
+scalaVersion := "2.11.8"
 
 resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
 
@@ -59,12 +59,12 @@ scalacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.hibernate" % "hibernate-validator" % "5.1.3.Final", // Bean validation
+  "org.hibernate" % "hibernate-validator" % "5.2.4.Final", // Bean validation
   "javax.validation" % "validation-api" % "1.1.0.Final", // Bean validation
   "org.glassfish" % "javax.el" % "3.0.0", // Bean validation
-  "org.joda" % "joda-convert" % "1.7", // scalac compile helper for joda-time.
-  "joda-time" % "joda-time" % "2.7" % "optional",
-  "org.jsoup" % "jsoup" % "1.8.1" % "optional",
-  "org.specs2" %% "specs2-core" % "3.1.1" % "test",
-  "org.specs2" %% "specs2-mock" % "3.1.1" % "test"
+  "org.joda" % "joda-convert" % "1.8", // scalac compile helper for joda-time.
+  "joda-time" % "joda-time" % "2.9.2",
+  "org.jsoup" % "jsoup" % "1.8.3",
+  "org.specs2" %% "specs2-core" % "3.7.2" % "test",
+  "org.specs2" %% "specs2-mock" % "3.7.2" % "test"
 )

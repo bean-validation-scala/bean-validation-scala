@@ -3,7 +3,7 @@ package com.tsukaby.bean_validation_scala
 import javax.validation.constraints.Size
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.bv.size.SizeValidatorForCollection
 
 import scala.collection.JavaConversions._
 import scala.collection.SeqLike

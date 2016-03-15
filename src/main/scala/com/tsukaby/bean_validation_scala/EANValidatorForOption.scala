@@ -3,7 +3,7 @@ package com.tsukaby.bean_validation_scala
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
 import org.hibernate.validator.constraints.EAN
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.hv.EANValidator
 
 /**
  * Checks that a given wrapped character sequence (e.g. Option[String]) is a valid EAN barcode.

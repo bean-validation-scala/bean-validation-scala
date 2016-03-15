@@ -3,7 +3,7 @@ package com.tsukaby.bean_validation_scala
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
 import org.hibernate.validator.constraints.NotBlank
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.hv.NotBlankValidator
 
 /**
  * Check that a wrapped character sequence's (e.g. Option[String]) trimmed length is not empty.

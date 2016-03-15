@@ -3,7 +3,7 @@ package com.tsukaby.bean_validation_scala
 import javax.validation.constraints.Max
 import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
-import org.hibernate.validator.internal.constraintvalidators._
+import org.hibernate.validator.internal.constraintvalidators.bv.{MaxValidatorForNumber, MaxValidatorForCharSequence}
 
 /**
  * Check that the wrapped character sequence (e.g. Option[String]) and the number validated represents a number,
