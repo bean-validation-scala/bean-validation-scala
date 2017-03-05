@@ -2,9 +2,9 @@ organization := "com.tsukaby"
 
 name := "bean-validation-scala"
 
-version := "0.4.1"
+version := "0.4.2"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.12.1"
 
 resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
 
@@ -56,15 +56,18 @@ scalacOptions ++= Seq(
   "-Ywarn-value-discard",
   "-Xfatal-warnings",
   "-Yrangepos"
+
 )
 
+scalacOptions in (Compile, doc) += "-no-java-comments"
+
 libraryDependencies ++= Seq(
-  "org.hibernate" % "hibernate-validator" % "5.2.4.Final", // Bean validation
+  "org.hibernate" % "hibernate-validator" % "5.4.0.Final", // Bean validation
   "javax.validation" % "validation-api" % "1.1.0.Final", // Bean validation
   "org.glassfish" % "javax.el" % "3.0.0", // Bean validation
   "org.joda" % "joda-convert" % "1.8", // scalac compile helper for joda-time.
   "joda-time" % "joda-time" % "2.9.2",
   "org.jsoup" % "jsoup" % "1.8.3",
-  "org.specs2" %% "specs2-core" % "3.7.2" % "test",
-  "org.specs2" %% "specs2-mock" % "3.7.2" % "test"
+  "org.specs2" %% "specs2-core" % "3.8.8" % "test",
+  "org.specs2" %% "specs2-mock" % "3.8.8" % "test"
 )
