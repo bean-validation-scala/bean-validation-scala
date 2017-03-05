@@ -5,7 +5,7 @@ import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
 import org.hibernate.validator.internal.constraintvalidators.bv.size.SizeValidatorForCollection
 
-import scala.collection.JavaConversions._
+import scala.collection.JavaConverters.seqAsJavaList
 import scala.collection.SeqLike
 
 /**
@@ -21,6 +21,6 @@ class SizeValidatorForSeqLike extends ConstraintValidator[Size, SeqLike[_, _]] {
   override def isValid(value: SeqLike[_, _], context: ConstraintValidatorContext): Boolean = {
     val v = new SizeValidatorForCollection
     v.initialize(constraintAnnotation)
-    v.isValid(value.toSeq, context)
+    v.isValid(seqAsJavaList (value.toSeq), context)
   }
 }

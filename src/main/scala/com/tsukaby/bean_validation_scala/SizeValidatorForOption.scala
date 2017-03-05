@@ -6,7 +6,7 @@ import javax.validation.{ConstraintValidator, ConstraintValidatorContext}
 
 import org.hibernate.validator.internal.constraintvalidators.bv.size._
 
-import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
 import scala.collection.SeqLike
 
 /**
@@ -69,11 +69,11 @@ class SizeValidatorForOption extends ConstraintValidator[Size, Option[_]] {
       case Some(x:SeqLike[_, _]) =>
         val v = new SizeValidatorForCollection
         v.initialize(constraintAnnotation)
-        v.isValid(x.toSeq, context)
+        v.isValid( seqAsJavaList( x.toSeq), context)
       case Some(x:Map[_, _]) =>
         val v = new SizeValidatorForMap
         v.initialize(constraintAnnotation)
-        v.isValid(x, context)
+        v.isValid( mapAsJavaMap( x ), context)
       case None =>
         true
       case Some(_) =>
