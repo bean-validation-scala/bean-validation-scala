@@ -4,7 +4,9 @@ name := "bean-validation-scala"
 
 version := "0.4.2"
 
-scalaVersion := "2.12.1"
+scalaVersion := "2.11.8"
+
+crossScalaVersions := Seq("2.11.8", "2.12.1")
 
 resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
 
@@ -21,7 +23,7 @@ publishTo <<= version { (v: String) =>
     Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
 
-pomIncludeRepository := { _ => false}
+pomIncludeRepository := { _ => false }
 
 pomExtra := <url>https://github.com/bean-validation-scala/bean-validation-scala</url>
   <licenses>
@@ -59,7 +61,7 @@ scalacOptions ++= Seq(
 
 )
 
-scalacOptions in (Compile, doc) += "-no-java-comments"
+scalacOptions in(Compile, doc) += "-no-java-comments"
 
 libraryDependencies ++= Seq(
   "org.hibernate" % "hibernate-validator" % "5.4.0.Final", // Bean validation
