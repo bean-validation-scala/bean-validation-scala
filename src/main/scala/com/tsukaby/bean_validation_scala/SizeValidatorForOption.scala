@@ -69,11 +69,11 @@ class SizeValidatorForOption extends ConstraintValidator[Size, Option[_]] {
       case Some(x:SeqLike[_, _]) =>
         val v = new SizeValidatorForCollection
         v.initialize(constraintAnnotation)
-        v.isValid( seqAsJavaList( x.toSeq), context)
+        v.isValid(x.toSeq.asJava, context)
       case Some(x:Map[_, _]) =>
         val v = new SizeValidatorForMap
         v.initialize(constraintAnnotation)
-        v.isValid( mapAsJavaMap( x ), context)
+        v.isValid(x.asJava, context)
       case None =>
         true
       case Some(_) =>
