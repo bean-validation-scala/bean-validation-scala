@@ -7,14 +7,12 @@ This library enable validation to some Monad. (e.g. Option, Seq, etc)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.tsukaby/bean-validation-scala_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.tsukaby/bean-validation-scala_2.11)
 [![Scaladoc](http://javadoc-badge.appspot.com/com.tsukaby/bean-validation-scala_2.11.svg?label=scaladoc)](http://javadoc-badge.appspot.com/com.tsukaby/bean-validation-scala_2.11)
 
-## Gitter Chat for Casual Q&A
-
-- 英語 or 日本語 (English or Japanese): [![Join the chat at https://gitter.im/bean-validation-scala/bean-validation-scala](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/bean-validation-scala/bean-validation-scala?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 ## Getting Started
 
+Support Scala `2.11` and `2.12`
+
     libraryDependencies ++= Seq(
-      "com.tsukaby" %% "bean-validation-scala" % "0.4.0"
+      "com.tsukaby" %% "bean-validation-scala" % "0.4.2"
     )
 
 This library has been published in the [Maven central](http://search.maven.org/#browse|999013097).
@@ -110,6 +108,6 @@ For example.
 ## License
 
 ```
-Copyright 2015 - 2015 tsukaby.com
+Copyright 2015 - 2017 tsukaby.com
 MIT License
 ```
