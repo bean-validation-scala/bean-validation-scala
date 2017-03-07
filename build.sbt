@@ -61,7 +61,15 @@ scalacOptions ++= Seq(
 
 )
 
-scalacOptions in(Compile, doc) += "-no-java-comments"
+scalacOptions in(Compile, doc) ++= {
+  // Work around 2.12 bug which prevents javadoc in nested java classes from compiling.
+  CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, v)) if v == 12 =>
+      Seq("-no-java-comments")
+    case _ =>
+      Nil
+  }
+}
 
 libraryDependencies ++= Seq(
   "org.hibernate" % "hibernate-validator" % "5.4.0.Final", // Bean validation
